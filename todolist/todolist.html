@@ -1,0 +1,80 @@
+<html lang="zh-hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="todolist.css">
+        <script  type="text/javascript" src="todolist.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand px-5" href="../index.html">Benny<br>Portfolio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav ms-auto mb-2 mb-lg-0 px-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#work">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="big">
+            <div class="wrapper">
+                <h1 class="title" >To Do List</h1>
+
+                <div class="input_block">
+                    <input class="input" type="text">
+                    <button class="add">+</button>
+                </div>
+
+                
+                <div class="todo_list_block">
+                    <h3>待辦事項</h3>
+    <!--                 <div class="check">
+                        <input class="todo_item" type="text" value="待辦事項在這!" readonly="false">
+                        <div class="item_icons">
+                            <div class="item_icons_modify">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </div>
+                            <div class="item_icons_trash">
+                                <i class="fa fa-trash-o"></i>
+                            </div>
+                            <div class="item_icons_done">
+                                <i class="fa fa-check"></i>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+
+                <div class="finish_block">
+                    <h3>完成事項</h3>
+    <!--                 <div class="finish">
+                        <div class="finish_item">完成事項在這!</div>
+                        <div class="finish_icons_trash">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+            <canvas id="bgcanvas"></canvas>
+        </div>
+        <div class="footer py-4">
+            <p class="mail">benny88811@gmail.com</p>
+            <p class="cc">© Designed by Benny</p>
+        </div>
+        <script  type="text/javascript" src="todolist.js"></script>
+    </body>
+</html>

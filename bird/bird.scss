@@ -1,0 +1,84 @@
+//bootstrap scss
+@import "../bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+$bgc: #100F0F;
+$info_color: #929AAB;
+$main_color: #383838;
+$white: #F2F2F2;
+
+.footer{
+    width: 100%;
+    background-color: $white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    .mail{
+        color: $main_color;
+    }
+    .cc{
+        // margin: 1rem;
+        font-size: 12px;
+        color: $main_color;
+    }
+}
+
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    color: white;
+}
+
+
+.big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    border: solid 5px rgba(255, 255, 255, 0.2);
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: #222;
+    overflow: hidden;
+}
+.game .b1, .game .b2 {
+    background-color: #FF644E;
+}
+.game .c1, .game .c2 {
+    background-color: #3498db;
+}
+.game .player {
+    transition: 0.1s;
+    background-color: #fff;
+}
+.game .score {
+    padding: 0px;
+    margin: 10px;
+    position: relative;
+    z-index: 10;
+    display: none;
+}
+.game .info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #222;
+    color: white;
+}
+.game .info button {
+    border: none;
+    padding: 10px 20px;
+}
+

@@ -1,0 +1,81 @@
+//bootstrap scss
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+// custom scss
+
+$bgc: #100F0F;
+$info_color: #929AAB;
+$main_color: #383838;
+$white: #F2F2F2;
+
+*{
+    margin: 0;
+    padding: 0;
+    // border: solid 1px white;
+}
+
+html,body{
+    background-color: $bgc;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.line{
+    position: fixed;
+    left: 80%;
+    top: 30%;
+    z-index: 100;
+    transform: rotate(-90deg) translateY(300%);
+    // text-align: bottom;
+    h4{
+        font-weight: 0.1em;
+        font-size: 1em;
+        color: #eee;
+        opacity: 0.4;
+    }
+}
+
+.wrapper{
+    .left{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        img{
+            margin: 20px;
+            transition: 0.8s;
+            &:hover{
+                scale: 1.1;
+                box-shadow: 0px 0px 20px rgba($white,0.2);
+            }
+        }
+    }
+    .right{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        img{
+            margin: 20px;
+            transition: 0.8s;
+            &:hover{
+                scale: 1.1;
+                box-shadow: 0px 0px 20px rgba($white,0.2);
+            }
+        }
+    }
+    
+}
+
+.footer{
+    width: 100%;
+    background-color: $white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    .mail{
+        color: $main_color;
+    }
+    .cc{
+        // margin: 1rem;
+        font-size: 12px;
+    }
+}

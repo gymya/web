@@ -1,0 +1,222 @@
+//bootstrap scss
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+// custom scss
+
+$bgc: #100F0F;
+$info_color: #929AAB;
+$main_color: #383838;
+$white: #F2F2F2;
+
+*{
+    margin: 0;
+    padding: 0;
+    // border: solid 1px red;
+}
+
+html,body{
+    background-color: $bgc;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.line{
+    position: fixed;
+    left: 80%;
+    top: 30%;
+    z-index: 100;
+    transform: rotate(-90deg) translateY(300%);
+    h4{
+        font-weight: 0.1em;
+        font-size: 1em;
+        color: #eee;
+        opacity: 0.4;
+    }
+}
+
+.wrapper{
+    font-family: 'Oswald', sans-serif;
+    .left{
+        position: relative;
+        height: 500px;
+        background-color: $main_color;
+        padding: 0;
+        &:hover .font_list{
+            transform: translateX(0%)
+        }
+        .pic_area{
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: $white;
+            width: 200px;
+            height: 260px;
+            box-shadow: 5px 10px 20px rgba(#100F0F,0.3);
+            .cart_pic{
+                position: absolute;
+                right: 0;
+                top: 0;
+                object-fit: cover;
+                width: 90%;
+            }
+        }
+        .font_list{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            transform: translateX(-100%);
+            transition: 1s;
+            ul{
+                height: 100%;
+                li{
+                    height: 25%;
+                    font-size: 1.5rem;
+                    color: $main_color;
+                    background-color: $white;
+                    position: relative;
+                    transition: 0.5s;
+                    &:hover{
+                        background-color: #CACACA;
+                    }
+                    .use_code{
+                        font-size: 0.8rem;
+                        position: absolute;
+                        right: 2%;
+                        bottom: 5%;
+                        color: $info_color;
+                    }
+                }
+            }
+        }
+        p{
+            position: absolute;
+            bottom: 0px;
+            left: 20px;
+            font-size: 90px;
+            color: $white;
+            text-decoration: none;
+            transition: 0.5s;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+    }
+    .right{
+        padding: 0;
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+        .ntcu_game{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #CACACA;
+            a{
+                position: absolute;
+                bottom: 0px;
+                right: 20px;
+                font-size: 60px;
+                color: $white;
+                text-decoration: none;
+                transition: 0.5s;
+                color: $main_color;
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+        }
+        .ui_design{
+            position: absolute;
+            width: 60%;
+            height: 80%;
+            background-color: #2c2c2c;
+            transition: 0.5s;
+            transform: translateY(-5%);
+            box-shadow: 5px 10px 20px rgba(#100F0F,0.3);
+            &:hover{
+                transform: translateY(0%);
+            }
+            a{
+                position: absolute;
+                bottom: 0px;
+                left: 20px;
+                font-size: 60px;
+                color: $white;
+                text-decoration: none;
+                transition: 0.5s;
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+        }
+        .graphic{
+            position: absolute;
+            width: 50%;
+            height: 60%;
+            background-color: $info_color;
+            transition: 0.5s;
+            transform: translateY(-8%);
+            box-shadow: 5px 10px 20px rgba(#100F0F,0.3);
+            &:hover{
+                transform: translateY(0%);
+            }
+            a{
+                position: absolute;
+                bottom: 0px;
+                left: 20px;
+                font-size: 60px;
+                color: #fff;
+                text-decoration: none;
+                transition: 0.5s;
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+}
+
+#about{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: $white;
+    img{
+        width: 40%;
+        box-sizing: border-box;
+    }
+    .name{
+        font-size: 24px;
+    }
+    .exp{
+        .dash{
+            display: inline-block;
+            color: $info_color;
+        }
+        .small_text{
+            font-size: 16px;
+        }
+    }
+    .edu{
+        .eng{
+            font-size: 16px;
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    background-color: $white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    .mail{
+        color: $main_color;
+    }
+    .cc{
+        // margin: 1rem;
+        font-size: 12px;
+        color: $main_color;
+    }
+}

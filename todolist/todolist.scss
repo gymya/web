@@ -1,0 +1,166 @@
+
+//bootstrap scss
+@import "../bootstrap/scss/bootstrap";
+// @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+$info_color: #929AAB;
+$main_color: #383838;
+$white: #F2F2F2;
+
+.footer{
+    width: 100%;
+    background-color: $white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    .mail{
+        color: $main_color;
+    }
+    .cc{
+        // margin: 1rem;
+        font-size: 12px;
+        color: $main_color;
+    }
+}
+
+
+$bgc: #273c75;
+$textColor: #718093;
+
+@mixin main_area {
+    border: 2px solid rgba($color: $textColor, $alpha: 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 12px 0px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    // border: 1px solid #000;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    // background-color: $bgc;
+    color: $textColor;
+    
+    // overflow: hidden;
+}
+
+#bgcanvas{
+    position: absolute;
+    z-index: -1;
+}
+
+
+.big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80%;
+}
+.wrapper{
+    h1{
+        font-size: 36px;
+        color: $bgc;
+        text-align:center;
+        font-family: 'Segoe UI';
+        font-weight: 800;
+    }
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 10px 10px 40px rgba($color: #000000, $alpha: 0.3);
+    transition: 0.5s;
+    &:hover{
+        box-shadow: 20px 20px 80px rgba($color: #000000, $alpha: 0.4);
+        transform: translate(-5px,-5px);
+    }
+}
+
+.input_block{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: $bgc;
+        color: #fff;
+        &:hover{
+            background-color: $textColor;
+            color: $bgc;
+            cursor: pointer;
+        }
+    }
+}
+
+.input{
+    width: 90%;
+    border:none;
+    border-bottom: 2px solid $textColor;
+    &:focus{
+        outline: none
+    }
+}
+
+.todo_list_block{
+    @include main_area;
+    h3{
+        font-size: 24px;
+    }
+}
+
+.todo_item{
+    border:none;
+    font-size: 18px;
+    color: $bgc;
+    font-weight: normal;
+    &:focus{
+        outline: none
+    }
+}
+
+.finish_block{
+    @include main_area;
+    h3{
+        font-size: 24px;
+    }
+}
+
+.finish_item{
+    font-size: 18px;
+    color: $bgc;
+    font-weight: normal;
+}
+
+.check,.finish{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_icons,.done_icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i{
+    display: block;
+    margin: 5px;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+
+
+
+
+

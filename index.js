@@ -11,8 +11,8 @@ window.addEventListener("resize",function(){
 
 
 var bgColor = "#100F0F"
-
-
+var time = 0
+var gear_color = "rgba(255,255,255,0.5)"
 
 // Vec----------
 
@@ -120,11 +120,77 @@ class Text {
     }
 }
 
-
+//----gear--
+let degToPi = Math.PI/180
+class Gear {
+    constructor(args){
+    let def ={
+    p: new Vec(0,0),
+    r: 100,
+    color: "white",
+    lineTo: function(obj,i){
+        return true
+    },
+    getWidth: function(obj,i){
+        return 1
+    },
+    anglePan: function(obj,i){
+        return 0
+    },
+    vertical: false,
+    getVerticalWidth: function(obj,i){
+        return 2
+    },
+    ramp: 0,
+    
+    }
+    Object.assign(def,args)
+    Object.assign(this,def)
+}
+draw(){
+    ctx.beginPath()
+    for(var i=1;i<=360;i++){
+        let angle1 = i + this.anglePan()
+        let angle2 = i-1 + this.anglePan()
+        let use_r = this.r +this.ramp*Math.sin(i/10)
+        let use_r2 = this.r +this.ramp*Math.sin( (i-1)/10 )
+        
+      let x1 = use_r *Math.cos(angle1*degToPi)
+      let y1 = use_r *Math.sin(angle1*degToPi)
+      let x2 = use_r2 *Math.cos(angle2*degToPi)
+      let y2 = use_r2 *Math.sin(angle2*degToPi)
+    
+    if (this.lineTo(this,i)){
+        ctx.beginPath()
+        ctx.moveTo(x1,y1)
+        ctx.lineTo(x2,y2)
+        ctx.strokeStyle=this.color
+        ctx.lineWidth= this.getWidth(this,i)
+        ctx.stroke()
+        
+    }
+    if (this.vertical){
+        let l = this.getVerticalWidth(this,i)
+        let x3 = (use_r+l)*Math.cos(angle1*degToPi)
+        let y3 = (use_r+l)*Math.sin(angle1*degToPi)
+        
+        
+        ctx.beginPath()
+        ctx.moveTo(x1,y1)
+        ctx.lineTo(x3,y3)
+        ctx.strokeStyle=this.color
+        ctx.stroke()
+    }
+    
+    }
+}
+}
 
 //--------程式---
 
 circles = []
+let gears= []
+
 
 text = new Text({
     text: "Hi,I'm Benny.",
@@ -141,11 +207,59 @@ small_text = new Text({
 
 
 function init(){
-
+    gears.push(new Gear({
+        r: 200,
+        color: gear_color
+    }))
+    
+    gears.push(new Gear({
+        r: 220,
+        lineTo: function(obj,i){
+            return (i%4<3)
+        },
+        anglePan: function(obj,i){
+            return -80*Math.sin(time/200)
+        },
+        color: gear_color
+    }))
+    
+    gears.push(new Gear({
+        r: 170,
+        lineTo: function(obj,i){
+            return !(i%120<40)
+        },
+        anglePan: function(obj,i){
+            return -50*Math.sin(time/200)
+        },
+        color: gear_color
+    }))
+    
+    gears.push(new Gear({
+        r: 250,
+        lineTo(obj,i){
+            return false
+        },
+        anglePan: function(obj,i){
+            return 40*Math.sin(time/160)
+        },
+    vertical: true,
+        getVerticalWidth(obj,i){
+        
+        if (i%10==0){
+            return 15
+        }
+        if (i%5==0){
+            return 10
+        }
+        return 5
+        },
+    color: gear_color
+    }))
 }
 init()
 
 function update(){
+    time++
     circles.forEach(c=>{c.update()})
 }
 setInterval(update,30)
@@ -197,6 +311,14 @@ function draw(){
         small_text.draw_text()
     }
 
+
+    //---gear---
+    ctx.save()
+        ctx.translate(ww/2,wh/2)
+        gears.forEach(gears=>{   
+        gears.draw()
+    })
+    ctx.restore()
     // ----------------
     setTimeout(draw,1000/30)
 }

@@ -84,7 +84,7 @@ class Text {
         let def = {
             text: "",
             p: new Vec(),
-            font_size: 6,
+            font_size: 80,
             num: 0, //第幾個字
             char: "", //選出來的字
             finish: false,
@@ -106,7 +106,7 @@ class Text {
     draw_text(){
         ctx.beginPath()
         //文字
-        ctx.font = `${this.font_size}em Arial`
+        ctx.font = `${this.font_size}vw Arial`
         ctx.fillStyle = "white"
         ctx.fillText(this.char,this.p.x,this.p.y)
         //輸入線(沒做)

@@ -11100,9 +11100,25 @@ html, body {
 #about img {
   width: 40%;
   box-sizing: border-box;
+  display: block;
 }
 #about .name {
   font-size: 24px;
+  display: inline-block;
+}
+#about .icon {
+  height: 20%;
+}
+#about .icon .hack {
+  width: 80px;
+  height: 80px;
+  background-image: url("pic/HackMD.png");
+  background-size: cover;
+  transition: 0.5s;
+}
+#about .icon .hack:hover {
+  box-shadow: 0px 0px 20px rgba(242, 242, 242, 0.2);
+  scale: 1.1;
 }
 #about .exp .dash {
   display: inline-block;

@@ -25,7 +25,7 @@ $white: #F2F2F2;
 
 
 
-$blue: #395B64;
+$blue: #100F0F;
 $orange: #FF8C32;
 $white: #EEEEEE;
 $text_color: #2B4865;
@@ -72,11 +72,12 @@ html,body{
     justify-content: Space-around;
     align-items: center;
     position: absolute;
-    top: 100;
-    background-color: $white;
+    top: 100px;
+    background-color: #383838;
     z-index: 100;
-    color: $blue;
+    color: $white;
     .top_cart{
+        margin-top: 10px;
         &:hover{
             color: $orange;
             transition: 0.5s;

@@ -10954,7 +10954,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #395B64;
+  background-color: #100F0F;
 }
 
 .top {
@@ -10965,10 +10965,13 @@ html, body {
   justify-content: Space-around;
   align-items: center;
   position: absolute;
-  top: 100;
-  background-color: #EEEEEE;
+  top: 100px;
+  background-color: #383838;
   z-index: 100;
-  color: #395B64;
+  color: #EEEEEE;
+}
+.top .top_cart {
+  margin-top: 10px;
 }
 .top .top_cart:hover {
   color: #FF8C32;
@@ -11022,7 +11025,7 @@ html, body {
   line-height: 1.3;
   text-align: justify;
   margin: 10px;
-  color: #395B64;
+  color: #100F0F;
   opacity: 0.6;
 }
 .cards .card .right .price {
@@ -11052,7 +11055,7 @@ html, body {
 }
 .cards .card .right .add:hover {
   color: #FF8C32;
-  background-color: #395B64;
+  background-color: #100F0F;
 }
 .cards .card .right .add:active {
   scale: 0.5;
